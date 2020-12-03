@@ -1,0 +1,54 @@
+{
+  "applications": [
+    {
+      "installType": "FORCE_INSTALLED",
+      "packageName": "com.google.android.gm",
+      "defaultPermissionPolicy": "GRANT"
+    },
+    {
+      "installType": "FORCE_INSTALLED",
+      "packageName": "com.google.android.apps.maps",
+      "defaultPermissionPolicy": "GRANT"
+    }
+  ],
+  "passwordPolicies":[
+      {
+         "passwordQuality":"NUMERIC",
+         "passwordScope":"SCOPE_DEVICE",
+         "passwordMinimumLength":"5",
+         "passwordHistoryLength":"0",
+         "maximumFailedPasswordsForWipe":"10"
+      },
+      {
+         "passwordQuality":"NUMERIC",
+         "passwordScope":"SCOPE_PROFILE",
+         "passwordMinimumLength":"5",
+         "passwordHistoryLength":"0",
+         "maximumFailedPasswordsForWipe":"10"
+      }
+   ],
+   "policyEnforcementRules":[
+      {
+         "settingName":"passwordPolicies",
+         "blockAction":{
+            "blockAfterDays":0,
+            "blockScope":"BLOCK_SCOPE_DEVICE"
+         },
+         "wipeAction":{
+            "wipeAfterDays":10,
+            "preserveFrp":true
+         }
+      },
+      {
+         "settingName":"passwordPolicies",
+         "blockAction":{
+            "blockAfterDays":0,
+            "blockScope":"BLOCK_SCOPE_WORK_PROFILE"
+         },
+         "wipeAction":{
+            "wipeAfterDays":10,
+            "preserveFrp":true
+         }
+      }
+   ]
+}
